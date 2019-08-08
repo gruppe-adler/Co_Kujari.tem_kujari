@@ -1,4 +1,4 @@
-params ["_heli"];
+params ["_vehicle"];
 
 private _wash = "#particlesource" createVehicleLocal [
 	0,
@@ -6,7 +6,7 @@ private _wash = "#particlesource" createVehicleLocal [
 	0
 ];  
 
-private _washSettings = _heli getVariable ["GRAD_rotorWash_wash", [
+private _washSettings = _vehicle getVariable ["GRAD_rotorWash_wash", [
     [],
     [],
     [],

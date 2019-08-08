@@ -1,4 +1,4 @@
-params ["_heli"];
+params ["_vehicle"];
 
 private _linger = "#particlesource" createVehicleLocal [
 	0,
@@ -6,7 +6,7 @@ private _linger = "#particlesource" createVehicleLocal [
 	0
 ];  
 
-private _lingerSettings = _heli getVariable ["GRAD_rotorWash_linger", [
+private _lingerSettings = _vehicle getVariable ["GRAD_rotorWash_linger", [
     [],
     [],
     [],

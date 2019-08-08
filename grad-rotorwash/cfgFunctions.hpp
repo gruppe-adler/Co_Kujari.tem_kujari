@@ -3,6 +3,7 @@ class GRAD_rotorwash {
 	class client {
 		file = grad-rotorwash\functions\client;
 
+		class adjustEmittersLocal {};
 		class clientLoop { postinit = 1; };
 		class createLingerEmitter {};
 		class createStoneEmitter {};

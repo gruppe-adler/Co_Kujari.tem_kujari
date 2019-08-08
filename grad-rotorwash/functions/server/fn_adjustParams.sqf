@@ -1,32 +1,32 @@
-params ["_heli", "_point", "_color", ["_activate", false]];
+params ["_vehicle", "_point", "_color", ["_activate", false]];
 
 if (_activate) then {
-	_linger = [_heli] call grad_rotorwash_fnc_createLingerEmitter;
-	_wash = [_heli] call grad_rotorwash_fnc_createWashEmitter;
+	_linger = [_vehicle] call grad_rotorwash_fnc_createLingerEmitter;
+	_wash = [_vehicle] call grad_rotorwash_fnc_createWashEmitter;
 
-	_heli setVariable ["grad_rotorwash_emittersActive", [_linger, _wash]];
+	_vehicle setVariable ["grad_rotorwash_emittersActive", [_linger, _wash]];
 
 	diag_log format ["activating emitters"];
 };
 
 
-_heli setVariable ["grad_rotorwash_colors", _color];
+_vehicle setVariable ["grad_rotorwash_colors", _color];
 
 _color params ["_grad_colorR", "_grad_colorG", "_grad_ColorB", "_alpha"];
 
 private ["_linger", "_wash"];
 
-_height = (getPosATL (_heli)) select 2;
-_speed = speed _heli;
+_height = (getPosATL (_vehicle)) select 2;
+_speed = speed _vehicle;
 
 _alpha = _alpha - (0.025*_height);
 
 
 
 if (_speed < 1) then {
-	_timer = _heli getVariable ["grad_rotorwash_emitterStatic", 0];
+	_timer = _vehicle getVariable ["grad_rotorwash_emitterStatic", 0];
 	_timer = _timer + 1;
-	_heli setVariable ["grad_rotorwash_emitterStatic", _timer];
+	_vehicle setVariable ["grad_rotorwash_emitterStatic", _timer];
 
 	if (_timer > 30) then {
 		_alpha =  _alpha/4;
@@ -44,12 +44,12 @@ if (_speed < 1) then {
 		};
 	};
 } else {
-	_heli setVariable ["grad_rotorwash_emitterStatic", 0];
+	_vehicle setVariable ["grad_rotorwash_emitterStatic", 0];
 };
 
 /*
 // linger + wash
-private _emitters = _heli getVariable ["grad_rotorwash_emittersActive", []];
+private _emitters = _vehicle getVariable ["grad_rotorwash_emittersActive", []];
 
 if (count _emitters > 0) then {
 	_linger = _emitters select 0;
@@ -124,14 +124,14 @@ private _lingerParticleRandom =
 private _washPosATL = [_point select 0, _point select 1, 0.5];
 private _lingerPosATL = [_point select 0, _point select 1, 0.5];
 
-_heli setVariable ["GRAD_rotorWash_linger", [
+_vehicle setVariable ["GRAD_rotorWash_linger", [
 	_lingerPosATL,
 	_lingerParticleCircle,
 	_lingerParticleParams,
 	_lingerParticleRandom
 ], true];
 
-_heli setVariable ["GRAD_rotorWash_wash", [
+_vehicle setVariable ["GRAD_rotorWash_wash", [
 	_washPosATL,
 	_washParticleCircle,
 	_washParticleParams,

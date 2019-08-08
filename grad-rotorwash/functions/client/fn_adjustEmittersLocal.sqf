@@ -1,13 +1,15 @@
 params ["_vehicle"];
 
-private _linger = _vehicle getVariable ["GRAD_rotorWash_linger", [
+systemChat ("1");
+
+private _lingerSettings = _vehicle getVariable ["GRAD_rotorWash_linger", [
     [],
     [],
     [],
     []
 ]];
 
-private _wash = _vehicle getVariable ["GRAD_rotorWash_wash", [
+private _washSettings = _vehicle getVariable ["GRAD_rotorWash_wash", [
     [],
     [],
     [],
@@ -15,10 +17,10 @@ private _wash = _vehicle getVariable ["GRAD_rotorWash_wash", [
 ]];
 
 
-_linger params ["_lingerPosATL", "_lingerParticleCircle", "_lingerParticleParams", "_lingerParticleRandom"];
-_wash params ["_washPosATL", "_washParticleCircle", "_washParticleParams", "_washParticleRandom"];
+_lingerSettings params ["_lingerPosATL", "_lingerParticleCircle", "_lingerParticleParams", "_lingerParticleRandom"];
+_washSettings params ["_washPosATL", "_washParticleCircle", "_washParticleParams", "_washParticleRandom"];
 
-private _emitters = _heli getVariable ["grad_rotorwash_emittersActive", []];
+private _emitters = _vehicle getVariable ["grad_rotorwash_emittersActive", []];
 _emitters params ["_linger", "_wash"];
 
 _linger setPosATL _lingerPosATL;
@@ -34,4 +36,4 @@ _wash setParticleParams _washParticleParams;
 _wash setParticleRandom _washParticleRandom;
 
 
-systemChat str (_washParticleParams);
+systemChat ("2" + (_washParticleParams select 18));

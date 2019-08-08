@@ -9,6 +9,7 @@
 
                 // add vehicle to active list and activate emitters on clients
                 GRAD_ROTORWASH_VEHICLES_ACTIVE = GRAD_ROTORWASH_VEHICLES_ACTIVE + [_x];
+                publicVariable "GRAD_ROTORWASH_VEHICLES_ACTIVE";
 
                 private _point = [_x] call grad_rotorwash_fnc_getWashOrigin;
                 private _color = [_point] call grad_rotorwash_fnc_getSurfaceColor;
@@ -29,6 +30,7 @@
 
                 // remove vehicle from active list and deactivate emitters on clients
                 GRAD_ROTORWASH_VEHICLES_ACTIVE = GRAD_ROTORWASH_VEHICLES_ACTIVE - [_x];
+                publicVariable "GRAD_ROTORWASH_VEHICLES_ACTIVE";
                 [_x] remoteExecCall ["grad_rotorwash_fnc_emitterDeactivate"];  
             };
         };
