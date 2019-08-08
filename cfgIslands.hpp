@@ -110,6 +110,12 @@ class CfgIslands {
 		isWoodland = true;
 	};
 
+	class tem_kujari {
+		displayName = "Kujari";
+		type = "tropical";
+		isWoodland = false;
+	};
+
 	class utes {
 		displayName = "Utes";
 		type = "russian";

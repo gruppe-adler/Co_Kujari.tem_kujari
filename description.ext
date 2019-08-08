@@ -58,6 +58,8 @@ class CfgFunctions
   #include "grad-sandstorm\cfgFunctions.hpp"
   #include "grad-survivableCrash\cfgFunctions.hpp"
   #include "grad-introCam\cfgFunctions.hpp"
+  #include "grad-rotorWash\cfgFunctions.hpp"
+  #include "grad-enhancedDesert\cfgFunctions.hpp"
 
 	#include "functions\common\cfgFunctions.hpp"
 	#include "functions\diagnostics\cfgFunctions.hpp"
