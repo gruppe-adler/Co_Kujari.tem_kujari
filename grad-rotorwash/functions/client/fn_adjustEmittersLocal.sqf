@@ -25,15 +25,17 @@ _emitters params ["_linger", "_wash"];
 
 _linger setPosATL _lingerPosATL;
 _linger setParticleCircle _lingerParticleCircle;
+_lingerParticleParams set [5, _lingerPosATL];
 _lingerParticleParams set [18, _linger];
 _linger setParticleParams _lingerParticleParams;
 _linger setParticleRandom _lingerParticleRandom;
 
 _wash setPosATL _washPosATL;
 _wash setParticleCircle _washParticleCircle;
+_washParticleParams set [5, _washPosATL];
 _washParticleParams set [18, _wash];
 _wash setParticleParams _washParticleParams;
 _wash setParticleRandom _washParticleRandom;
 
 
-systemChat ("2" + (_washParticleParams select 18));
+systemChat ("2" + str _washPosATL);

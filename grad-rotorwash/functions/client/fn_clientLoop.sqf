@@ -8,7 +8,7 @@
     _args params [];
 
     {
-        [_x] call grad_rotorwash_fnc_adjustEmittersLocal;x
+        [_x] call grad_rotorwash_fnc_adjustEmittersLocal;
     } forEach GRAD_ROTORWASH_VEHICLES_ACTIVE;
 
     // placeholder

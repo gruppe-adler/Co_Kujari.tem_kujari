@@ -12,14 +12,14 @@ if (_activate) then {
 
 _vehicle setVariable ["grad_rotorwash_colors", _color];
 
-_color params ["_grad_colorR", "_grad_colorG", "_grad_ColorB", "_alpha"];
+_color params ["_grad_colorR", "_grad_colorG", "_grad_ColorB", "_grad_alpha"];
 
 private ["_linger", "_wash"];
 
 _height = (getPosATL (_vehicle)) select 2;
 _speed = speed _vehicle;
 
-_alpha = _alpha - (0.025*_height);
+private _alpha = 1 - (0.025*_height) * _grad_alpha;
 
 
 
@@ -76,7 +76,7 @@ private _washParticleParams = [
 		 	[_grad_colorR*1.5, _grad_colorG*1.5, _grad_colorB*1.5, 1 * _alpha/2],
 		 	[_grad_colorR*2, _grad_colorG*2, _grad_colorB*2, 0]
 		 ], 
-		 [1000], 0, 0, "", "", objNull, 0, true, grad_bounce];
+		 [1000], 0, 0, "", "", "_this", 0, true, grad_bounce];
 
 private _washParticleRandom = 
 /*LifeTime*/		[0.5,
@@ -108,7 +108,7 @@ private _lingerParticleParams = [
 		 	[_grad_colorR*1.5, _grad_colorG*1.5, _grad_colorB*1.5, 1.0 * _alpha],
 		 	[_grad_colorR*2, _grad_colorG*2, _grad_colorB*2, 0]
 		 ], 
-		 [0.08], 0, 0, "", "", objNull];
+		 [0.08], 0, 0, "", "", "_this"];
 
 private _lingerParticleRandom =
 /*LifeTime*/		[0.5,
@@ -121,8 +121,9 @@ private _lingerParticleRandom =
 /*randDirIntesity*/	0,
 /*Angle*/		0];
 
-private _washPosATL = [_point select 0, _point select 1, 0.5];
 private _lingerPosATL = [_point select 0, _point select 1, 0.5];
+private _washPosATL = [_point select 0, _point select 1, 0.5];
+
 
 _vehicle setVariable ["GRAD_rotorWash_linger", [
 	_lingerPosATL,
