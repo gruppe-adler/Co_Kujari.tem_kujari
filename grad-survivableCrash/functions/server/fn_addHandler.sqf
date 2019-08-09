@@ -40,11 +40,11 @@ _vehicle addEventHandler ["HandleDamage", {
 	};
 
 	// ignore if damage is maxed out
-	if(_health == 1) exitWith { 0 };
+	// if(_health >= 1) exitWith { 0 };
 
 
 	// trigger shotdown
-	if (_health + _dmg > 0.88) then { // this is wrong and needs to be fixed
+	if (_health + _damage > 0.88) then { // this is wrong and needs to be fixed
 		if (_index == -1 or hitSelection == "hull_hit") then {
 			_returnVal = 0;
 		
