@@ -104,14 +104,14 @@ if (!GRAD_SANDSTORM_DEBUG) then {
             player setVariable ["tf_sendingDistanceMultiplicator", 0.25];
         };
 
-        [_updateRate] call GRAD_sandstorm_fnc_adjustFog;
+        [_updateRate, true] call GRAD_sandstorm_fnc_adjustFog;
         private _inBuilding = [_updateRate] call GRAD_sandstorm_fnc_adjustEffects;
         if (!_inBuilding) then {
             [] call GRAD_sandstorm_fnc_createParticleClose;
         };
 
     } else {
-        _updateRate setFog [0.01,0.003,00]; // reset fog
+        [_updateRate, false] call GRAD_sandstorm_fnc_adjustFog;
         setAperture -1;
 
         if (player getVariable ["isInsideSandstorm", false]) then {

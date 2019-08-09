@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=2791;
+		nextID=2794;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=247;
+		nextID=259;
 	};
 	class Camera
 	{
-		pos[]={15617.476,145.74983,7899.4868};
-		dir[]={-0.86085892,-0.45788375,-0.22210529};
-		up[]={-0.44338161,0.8890034,-0.11439463};
-		aside[]={-0.24983229,-2.2014137e-007,0.96832305};
+		pos[]={15687.805,35.928467,7929.7549};
+		dir[]={0.30952412,-0.84394687,0.43820032};
+		up[]={0.48690316,0.53643686,0.68932033};
+		aside[]={0.81681663,-5.6215504e-007,-0.57696015};
 	};
 };
 binarizationWanted=0;
@@ -32990,7 +32990,6 @@ class Mission
 			};
 			id=2752;
 			type="Land_FoodSack_01_dmg_brown_F";
-			atlOffset=4.7683716e-006;
 		};
 		class Item182
 		{
@@ -33015,7 +33014,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={13780.109,13.078151,7343.9478};
-				angles[]={-0,0,0.01499443};
+				angles[]={0,0,0.01499443};
 			};
 			side="Empty";
 			flags=4;
@@ -33064,7 +33063,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={13782.735,12.942292,7342.5415};
-				angles[]={-0,0.19912525,0.01499443};
+				angles[]={0,0.19912525,0.01499443};
 			};
 			side="Empty";
 			flags=4;
@@ -33141,7 +33140,7 @@ class Mission
 			};
 			id=2777;
 			type="land_ffaa_casa_urbana_8";
-			atlOffset=-2.3841858e-007;
+			atlOffset=-1.1920929e-006;
 		};
 		class Item191
 		{
@@ -33172,7 +33171,7 @@ class Mission
 			flags=1;
 			id=2788;
 			type="ModuleHideTerrainObjects_F";
-			atlOffset=0.023386002;
+			atlOffset=0.023386955;
 			class CustomAttributes
 			{
 				class Attribute0

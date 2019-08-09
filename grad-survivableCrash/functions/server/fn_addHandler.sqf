@@ -8,6 +8,7 @@ params ["_vehicle"];
 if (_vehicle getVariable ["GRAD_survivableCrash_isHandled", false]) exitWith {};
 _vehicle setVariable ["GRAD_survivableCrash_isHandled", true];
 
+_vehicle setVariable ["ace_cookoff_enable", false, true];
 
 _vehicle addEventHandler ["HandleDamage", {
 	params [
@@ -27,7 +28,7 @@ _vehicle addEventHandler ["HandleDamage", {
 	private _health = 0;
 
 	// ignore any damage after vehicle is shot down
-	if (_unit getVariable ["GRAD_survivableCrash_shotDown", false]) exitWith {
+	if (!(_unit getVariable ["GRAD_survivableCrash_shotDown", false])) exitWith {
 		0
 	};
 
@@ -51,6 +52,8 @@ _vehicle addEventHandler ["HandleDamage", {
 			if (!(_unit getVariable ["GRAD_survivableCrash_shotDown", false])) then {
 				_unit setVariable ["GRAD_survivableCrash_shotDown", true, true];
 
+				systemChat "entering oncrash";
+				diag_log "entering oncrash";
 				// effects are managed by server
 	    		[_unit] remoteExecCall ["GRAD_survivableCrash_fnc_onCrash", 2];
 			};

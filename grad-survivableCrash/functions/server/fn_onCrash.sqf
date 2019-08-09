@@ -1,5 +1,10 @@
 params ["_veh"];
 
+if (!isServer) exitWith {};
+
+systemChat "oncrash";
+diag_log "oncrash";
+
 _veh setDamage .88;
 _veh setHitPointDamage ["HitFuel",.88];
 // _veh setHitPointDamage ["HitHRotor",.88];

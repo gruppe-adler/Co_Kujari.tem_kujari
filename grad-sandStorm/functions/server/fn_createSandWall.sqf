@@ -19,6 +19,7 @@ _triggerSound setTriggerArea [(_size+250), (_size+250), 0, false];
 
 
 private _helperObject = "ProtectionZone_Ep1" createVehicle _position;
+_helperObject setObjectTextureGlobal [0, "#(rgb,8,8,3)color(0,0,0,0)"];
 _helperObject setPosASL [_position select 0, _position select 1, 0];
 _helperObject setVectorUp [0,0,1];
 _trigger attachTo [_helperObject];
@@ -82,7 +83,7 @@ diag_log "add server marker";
     } forEach vehicles;
 
     
-    private _fog =  [0.3 + random 0.1, 0.003, 0];
+    private _fog =  [(0.3 + random 0.1), 0.003, 0];
     missionNamespace setVariable ["GRAD_sandstorm_fogValue", _fog, true];
 
 

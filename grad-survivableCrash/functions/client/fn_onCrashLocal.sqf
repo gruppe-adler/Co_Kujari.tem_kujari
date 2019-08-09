@@ -75,8 +75,9 @@ if (_unit == player) then {
 				params ["_unit"];
 
 				_unit allowDamage true;
+				[_unit, false] call ace_medical_fnc_setUnconscious;
 
-			}, [_unit], 3] call CBA_fnc_waitAndExecute;
+			}, [_unit], 3 + random 10] call CBA_fnc_waitAndExecute;
 
 		}, [_unit]] call CBA_fnc_waitUntilAndExecute;
 

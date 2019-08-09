@@ -4,28 +4,29 @@
 
 params ["_vehicle"];
 
+// dont add twice
+if (!isNull (_vehicle getVariable ["GRAD_enchancedDesert_lingerEmitter", objNull])) exitWith {};
 
 private _colorR = 0.3; 
 private _colorG = 0.25; 
 private _colorB = 0.2; 
-private _alpha = 0.3;
-private _lifetime = 60;
+private _lifetime = 45;
 
-private _dropInterval = 0.1;
+[{
+	params ["_args", "_handle"];
+	_args params ["_vehicle", "_colorR", "_colorG", "_colorB", "_lifetime"];
 
-private _lingerEmitter = "#particlesource" createVehicleLocal [
-	getpos _vehicle select 0,
-	getPos _vehicle select 1,
-	0
-];
+	if (!alive _vehicle) exitWith {
+		[_handle] call CBA_fnc_removePerFrameHandler;
+	};
 
-_lingerEmitter attachTo [_vehicle];
-
-_lingerEmitter setParticleCircle [0, [0, 0, 0]];
-_lingerEmitter setParticleParams [
+	private _speed = speed _vehicle;
+	
+	if ((_speed > 15) && GRAD_enhancedDesert_ACTIVE && {isEngineOn _vehicle}) then {
+		drop [
 		["\A3\data_f\cl_basic", 1, 0, 1],
 		 "", "Billboard", 1, _lifetime, 
-		 [0, 0, 0], 
+		 [getpos _vehicle select 0, getPos _vehicle select 1, 0], 
 		 [0, 0, 0], 0.3, 
 		 1,
 		 1,
@@ -34,54 +35,21 @@ _lingerEmitter setParticleParams [
 		 [
 		 	
 		 	[_colorR, _colorG, _colorB, 0],
+		 	[_colorR, _colorG, _colorB, 0.2],
+		 	[_colorR, _colorG, _colorB, 0.15],
+		 	[_colorR, _colorG, _colorB, 0.14],
+		 	[_colorR, _colorG, _colorB, 0.13],
+		 	[_colorR, _colorG, _colorB, 0.12],
 		 	[_colorR, _colorG, _colorB, 0.1],
-		 	[_colorR, _colorG, _colorB, 0.07],
-		 	[_colorR, _colorG, _colorB, 0.05],
-		 	[_colorR, _colorG, _colorB, 0.03],
+		 	[_colorR, _colorG, _colorB, 0.08],
+		 	[_colorR, _colorG, _colorB, 0.06],
+		 	[_colorR, _colorG, _colorB, 0.04],
 		 	[_colorR, _colorG, _colorB, 0.02],
-		 	[_colorR, _colorG, _colorB, 0.019],
-		 	[_colorR, _colorG, _colorB, 0.017],
-		 	[_colorR, _colorG, _colorB, 0.015],
-		 	[_colorR, _colorG, _colorB, 0.012],
-		 	[_colorR, _colorG, _colorB, 0.010],
-		 	[_colorR, _colorG, _colorB, 0.005],
+		 	[_colorR, _colorG, _colorB, 0.01],
 		 	[_colorR, _colorG, _colorB, 0.002],
 		 	[_colorR, _colorG, _colorB, 0]
 		 ], 
-		 [0.08], 0, 0, "", "", _lingerEmitter];
-
-
-_lingerEmitter setParticleRandom
-/*LifeTime*/		[3,
-/*Position*/		[5,5,0.1],
-/*MoveVelocity*/	[1,1,2],
-/*rotationVel*/		0,
-/*Scale*/		0.2,
-/*Color*/		[0.1,0.05,0.025,0.1],
-/*randDirPeriod*/	0.01,
-/*randDirIntesity*/	0.03,
-/*Angle*/		0];
-
-_lingerEmitter enableSimulation false;
-_lingerEmitter setDropInterval 0.1;
-
-
-[{
-	params ["_args", "_handle"];
-	_args params ["_vehicle", "_lingerEmitter"];
-
-	if (!alive _vehicle) exitWith {
-		deleteVehicle _lingerEmitter;
-		[_handle] call CBA_fnc_removePerFrameHandler;
+		 [0.08], 0, 0, "", "", _vehicle];
 	};
 
-	private _speed = speed _vehicle;
-	
-	if (_speed > 15 && GRAD_enhancedDesert_ACTIVE) then {
-		_lingerEmitter setDropInterval (2/_speed);
-		_lingerEmitter enableSimulation true;
-	} else {
-		_lingerEmitter enableSimulation false;
-	};
-
-}, 1, [_vehicle, _lingerEmitter]] call CBA_fnc_addPerFrameHandler;
+}, 0.1, [_vehicle, _colorR, _colorG, _colorB, _lifetime]] call CBA_fnc_addPerFrameHandler;
