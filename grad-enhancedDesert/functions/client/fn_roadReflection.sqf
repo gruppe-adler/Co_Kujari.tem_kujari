@@ -15,9 +15,9 @@ private _maxIter = 10;
     private _roads = _campos nearRoads 150;
     private _cur = 0;
 
-    _campos params ["_camX", "_camY", "_camZ"];
+    _campos params ["_camX", "_camY", ["_camZ",0]];
     // dont show effect from above/air and in nighttime
-    // if ((_camZ > 10) || sunOrMoon == 1) exitWith {};
+    if (_camZ > 5 || !GRAD_enhancedDesert_ACTIVE) exitWith {};
 
 
     private _player = ace_player;

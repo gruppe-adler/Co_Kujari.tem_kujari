@@ -10,13 +10,12 @@ params ["_position", "_size", "_speed", "_dir", ["_id",0]];
 
 private _identifier = format ["GRAD_sandstorm_id%1", _id];
 
-private _trigger = createTrigger ["EmptyDetector", _position];
-_trigger setTriggerArea [_size, _size, 0, false];
+private _trigger = createTrigger ["EmptyDetector", _position, true];
+[ _trigger, [_size, _size, 0, false] ] remoteExec [ "setTriggerArea", 0, true ];
 
 // trigger for activating sound earlier than VFX
-private _triggerSound = createTrigger ["EmptyDetector", _position];
-_triggerSound setTriggerArea [(_size+250), (_size+250), 0, false];
-
+private _triggerSound = createTrigger ["EmptyDetector", _position, true];
+[ _triggerSound, [(_size+250), (_size+250), 0, false] ] remoteExec [ "setTriggerArea", 0, true ];
 
 private _helperObject = "ProtectionZone_Ep1" createVehicle _position;
 _helperObject setObjectTextureGlobal [0, "#(rgb,8,8,3)color(0,0,0,0)"];
@@ -39,9 +38,8 @@ diag_log "add server wall";
 
 missionNamespace setVariable [_identifier, _trigger, true];
 
-setWind [0,0,true];
+setWind [0,10,true];
 0 setWindDir _dir;
-0 setWindForce 20;
 private _wSpeed = [wind, _speed*4] call BIS_fnc_vectorMultiply;
 setWind [_wSpeed select 0, _wSpeed select 1, true];
 // 5 setGusts 0.35;

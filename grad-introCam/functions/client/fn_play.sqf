@@ -11,6 +11,7 @@ titleText ["","BLACK FADED",999];
         if (didJIP) exitWith {
             titleText ["", "BLACK IN", 0];
         };
+        diwako_dui_main_toggled_off = true;
         
         player setVariable ["tf_voiceVolume", 0, true];
 

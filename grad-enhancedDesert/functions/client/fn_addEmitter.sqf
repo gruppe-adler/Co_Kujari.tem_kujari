@@ -5,12 +5,13 @@
 params ["_vehicle"];
 
 // dont add twice
-if (!isNull (_vehicle getVariable ["GRAD_enchancedDesert_lingerEmitter", objNull])) exitWith {};
+if (_vehicle getVariable ["GRAD_enchancedDesert_lingerEmitter", false]) exitWith {};
+_vehicle setVariable ["GRAD_enchancedDesert_lingerEmitter", true];
 
 private _colorR = 0.3; 
 private _colorG = 0.25; 
 private _colorB = 0.2; 
-private _lifetime = 45;
+private _lifetime = 60;
 
 [{
 	params ["_args", "_handle"];
@@ -35,21 +36,21 @@ private _lifetime = 45;
 		 [
 		 	
 		 	[_colorR, _colorG, _colorB, 0],
+		 	[_colorR, _colorG, _colorB, 0.35],
+		 	[_colorR, _colorG, _colorB, 0.3],
+		 	[_colorR, _colorG, _colorB, 0.25],
+		 	[_colorR, _colorG, _colorB, 0.23],
 		 	[_colorR, _colorG, _colorB, 0.2],
+		 	[_colorR, _colorG, _colorB, 0.17],
 		 	[_colorR, _colorG, _colorB, 0.15],
-		 	[_colorR, _colorG, _colorB, 0.14],
-		 	[_colorR, _colorG, _colorB, 0.13],
 		 	[_colorR, _colorG, _colorB, 0.12],
 		 	[_colorR, _colorG, _colorB, 0.1],
 		 	[_colorR, _colorG, _colorB, 0.08],
-		 	[_colorR, _colorG, _colorB, 0.06],
-		 	[_colorR, _colorG, _colorB, 0.04],
-		 	[_colorR, _colorG, _colorB, 0.02],
+		 	[_colorR, _colorG, _colorB, 0.05],
 		 	[_colorR, _colorG, _colorB, 0.01],
-		 	[_colorR, _colorG, _colorB, 0.002],
 		 	[_colorR, _colorG, _colorB, 0]
 		 ], 
 		 [0.08], 0, 0, "", "", _vehicle];
 	};
 
-}, 0.1, [_vehicle, _colorR, _colorG, _colorB, _lifetime]] call CBA_fnc_addPerFrameHandler;
+}, 0, [_vehicle, _colorR, _colorG, _colorB, _lifetime]] call CBA_fnc_addPerFrameHandler;

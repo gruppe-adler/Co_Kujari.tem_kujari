@@ -46,4 +46,4 @@ _wash setParticleParams _washParticleParams;
 _wash setParticleRandom _washParticleRandom;
 
 
-systemChat ("2" + str _lingerPos + str (getpos player));
+// systemChat ("2" + str _lingerPos + str (getpos player));

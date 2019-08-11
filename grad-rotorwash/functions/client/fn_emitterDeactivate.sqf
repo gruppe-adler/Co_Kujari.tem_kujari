@@ -8,4 +8,4 @@ private _emitters = _vehicle getVariable ["grad_rotorwash_emittersActive", []];
 
 _vehicle setVariable ["grad_rotorwash_emittersActive", []];
 
-systemChat "deleting emitters";
+/*systemChat "deleting emitters";*/
