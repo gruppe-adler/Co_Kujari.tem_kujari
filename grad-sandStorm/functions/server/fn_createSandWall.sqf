@@ -76,7 +76,7 @@ diag_log "add server marker";
         _vehicle = _x;
         
         if (count ([_vehicle] inAreaArray _trigger) > 0) then {
-            [_vehicle] call GRAD_sandstorm_fnc_addDamage;
+            // [_vehicle] call GRAD_sandstorm_fnc_addDamage; // todo enable
         };
     } forEach vehicles;
 

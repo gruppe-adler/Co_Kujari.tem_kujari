@@ -36,7 +36,7 @@ if (_vehicleState > 1) then {
         // todo: widen radius of particle sources to not interfere
         if (_vehicle isKindOf "Air" && {(getPos _vehicle) select 2 > 0}) then {
             // not in sync
-            addCamShake [(_shakepower), _shakeduration, _shakefreq];
+            addCamShake [(_shakepower*2), _shakeduration, _shakefreq];
             if (GRAD_SANDSTORM_DEBUG) then {
                 systemChat format ["player inside air vehicle"];
             };
