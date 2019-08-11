@@ -55,7 +55,7 @@ diag_log "add server marker";
 
 [{
     params ["_args", "_handle"];
-    _args params ["_helperObject", "_trigger", "_triggerSound", "_size", "_speed", "_dir", "_markerstr"];
+    _args params ["_helperObject", "_trigger", "_triggerSound", "_size", "_speed", "_markerstr"];
 
     if (isNull _helperObject) exitWith {
         [_handle] call CBA_fnc_removePerFrameHandler;
@@ -63,6 +63,8 @@ diag_log "add server marker";
         deleteVehicle _trigger;
         deleteVehicle _triggerSound;
     };
+
+    private _dir = windDir;
 
     private _newPos = (getPos _helperObject) getPos [_speed, _dir];
     _helperObject setPosASL _newPos;
@@ -92,4 +94,4 @@ diag_log "add server marker";
         systemChat "deleting trigger out of map";
     };
     
-}, 1, [_helperObject, _trigger, _triggerSound, _size, _speed, _dir, _markerstr]] call CBA_fnc_addPerFrameHandler;
+}, 1, [_helperObject, _trigger, _triggerSound, _size, _speed, _markerstr]] call CBA_fnc_addPerFrameHandler;
