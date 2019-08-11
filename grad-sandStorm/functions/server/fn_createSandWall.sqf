@@ -6,7 +6,11 @@
 
 */
 
-params ["_position", "_size", "_speed", "_dir", ["_id",0]];
+params ["_position", "_size", "_speed", "_dir"];
+
+private _existingSandstormsCount = missionNamespace getVariable ["GRAD_sandstorm_existingSandstormCount", 0];
+private _id = _existingSandstormsCount + 1;
+missionNamespace setVariable ["GRAD_sandstorm_existingSandstormCount", _id];
 
 private _identifier = format ["GRAD_sandstorm_id%1", _id];
 
