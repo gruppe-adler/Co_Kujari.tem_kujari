@@ -33,7 +33,7 @@ _loadoutWaitCondition = if (isClass (missionConfigFile >> "CfgFunctions" >> "GRA
                 [call TFAR_fnc_activeSwRadio, _settings] call TFAR_fnc_setSwSettings;
             };
 
-            systemChat "radiosettings: activated";
+            // systemChat "radiosettings: activated";
             GRAD_radioSettingsActivated = true;
         }, [], 1] call CBA_fnc_waitAndExecute;
     }, []] call CBA_fnc_waitUntilAndExecute;

@@ -40,7 +40,7 @@ missionNamespace setVariable [_identifier, _trigger, true];
 
 setWind [0,10,true];
 0 setWindDir _dir;
-private _wSpeed = [wind, _speed*4] call BIS_fnc_vectorMultiply;
+private _wSpeed = [wind, _speed*2] call BIS_fnc_vectorMultiply;
 setWind [_wSpeed select 0, _wSpeed select 1, true];
 // 5 setGusts 0.35;
 
@@ -48,7 +48,7 @@ private _markerstr = createMarker [format ["grad-sandstorm_debugmarker_%1", _ide
 _markerstr setMarkerShape "ELLIPSE";
 _markerstr setMarkerSize [_size, _size];
 _markerstr setMarkerColor "ColorRed";
-_markerstr setMarkerAlpha 0.5;
+_markerstr setMarkerAlpha 0;
 
 systemChat "add server marker";
 diag_log "add server marker";
