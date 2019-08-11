@@ -42,9 +42,9 @@ diag_log "add server wall";
 
 missionNamespace setVariable [_identifier, _trigger, true];
 
-setWind [0,10,true];
+setWind [0,1,true];
 0 setWindDir _dir;
-private _wSpeed = [wind, _speed*2] call BIS_fnc_vectorMultiply;
+private _wSpeed = [wind, _speed] call BIS_fnc_vectorMultiply;
 setWind [_wSpeed select 0, _wSpeed select 1, true];
 // 5 setGusts 0.35;
 

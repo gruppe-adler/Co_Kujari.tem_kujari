@@ -55,7 +55,7 @@ sleep 40;
 [ "B R I E F I N G", "26.11.2018" ] spawn BIS_fnc_infoText;
 
 10 fadeMusic 0.1;
-10 fadeSound 0;
+// 10 fadeSound 1;
 
 sleep 10;
 
