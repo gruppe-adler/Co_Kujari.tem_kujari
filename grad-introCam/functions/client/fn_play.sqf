@@ -31,6 +31,7 @@ titleText ["","BLACK FADED",999];
           	[_x, _forEachIndex] call GRAD_introCam_fnc_camCommands;
         } forEach _shots;
 
+        10 fadeSound 1;
 
         cutText [" ", "BLACK IN", 3];
         private _camera = "camera" camCreate (getpos player);
@@ -41,7 +42,7 @@ titleText ["","BLACK FADED",999];
 
         setViewDistance _viewDistanceCache;
         setObjectViewDistance _objectViewDistanceCache;
-        10 fadeSound 1;
+       
         titleText ["", "BLACK IN", 0];
         player setVariable ["tf_voiceVolume", 1, true];
         diwako_dui_main_toggled_off = false;

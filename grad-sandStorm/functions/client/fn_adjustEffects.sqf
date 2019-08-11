@@ -18,10 +18,10 @@ private _shakepower = 0.5 + random 0.5;
 private _shakeduration = _duration;
 private _shakefreq = 3 + random 1;
 
-private _apertureInVehicle = 10;
+private _apertureInVehicle = 15;
 private _apertureInOpenVehicle = 20;
 private _apertureInBuilding = 20;
-private _apertureOutsideGoggles = 10;
+private _apertureOutsideGoggles = 15;
 private _apertureOutsideNoGoggles = 20;
 
 
@@ -36,7 +36,7 @@ if (_vehicleState > 1) then {
         // todo: widen radius of particle sources to not interfere
         if (_vehicle isKindOf "Air" && {(getPos _vehicle) select 2 > 0}) then {
             // not in sync
-            addCamShake [(_shakepower*2), _shakeduration, _shakefreq];
+            addCamShake [(_shakepower*4), _shakeduration, _shakefreq];
             if (GRAD_SANDSTORM_DEBUG) then {
                 systemChat format ["player inside air vehicle"];
             };

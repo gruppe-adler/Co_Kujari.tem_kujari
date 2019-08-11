@@ -10,4 +10,4 @@ if (!_switchOff) then {
 
 // systemChat ("fog2 " + str _fog);
 
-0 setFog _fog;
+_duration setFog _fog;

@@ -23,7 +23,7 @@ switch (surfaceType _point) do {
 	case "#ZRSterkNaDno": { _colorR = 0.9; _colorG = 0.9; _colorB = 0.9; _alpha = 0.1; /* zarga brown grass */ };
 	case "#ZRHlina": { _colorR = 0.25; _colorG = 0.23; _colorB = 0.21; _alpha = 0.2; /* zarga brown grass */ };
 
-	default { _colorR = 0; _colorG = 0; _colorB = 0; _alpha = 1; };
+	default { _colorR = 0.35; _colorG = 0.25; _colorB = 0.2; _alpha = 0.5; };
 };
 
 // systemChat format ["surfaceType is %1", surfaceType _point];
