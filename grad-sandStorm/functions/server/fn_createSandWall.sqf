@@ -28,8 +28,8 @@ _helperObject setVectorUp [0,0,1];
 _trigger attachTo [_helperObject];
 _triggerSound attachTo [_helperObject];
 
-systemChat "add server wall";
-diag_log "add server wall";
+// systemChat "add server wall";
+// diag_log "add server wall";
 
 [
     _trigger, 

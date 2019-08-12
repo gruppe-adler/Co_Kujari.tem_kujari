@@ -2,11 +2,15 @@
 	[this] call GRAD_enhancedDesert_fnc_addEmitter;
 */
 
-params ["_vehicle"];
+params [["civilian", objNull], ["_vehicle",objNull]];
+
+if (isNull _vehicle) exitWith {};
 
 // dont add twice
 if (_vehicle getVariable ["GRAD_enchancedDesert_lingerEmitter", false]) exitWith {};
 _vehicle setVariable ["GRAD_enchancedDesert_lingerEmitter", true];
+
+diag_log format ["adding emitter to %1", _vehicle];
 
 private _colorR = 0.3; 
 private _colorG = 0.25; 
@@ -37,17 +41,17 @@ private _lifetime = 60;
 		 	
 		 	[_colorR, _colorG, _colorB, 0],
 		 	[_colorR, _colorG, _colorB, 0.35],
+		 	[_colorR, _colorG, _colorB, 0.33],
 		 	[_colorR, _colorG, _colorB, 0.3],
-		 	[_colorR, _colorG, _colorB, 0.25],
-		 	[_colorR, _colorG, _colorB, 0.23],
+		 	[_colorR, _colorG, _colorB, 0.27],
+		 	[_colorR, _colorG, _colorB, 0.24],
 		 	[_colorR, _colorG, _colorB, 0.2],
+		 	[_colorR, _colorG, _colorB, 0.19],
 		 	[_colorR, _colorG, _colorB, 0.17],
 		 	[_colorR, _colorG, _colorB, 0.15],
 		 	[_colorR, _colorG, _colorB, 0.12],
 		 	[_colorR, _colorG, _colorB, 0.1],
-		 	[_colorR, _colorG, _colorB, 0.08],
-		 	[_colorR, _colorG, _colorB, 0.05],
-		 	[_colorR, _colorG, _colorB, 0.01],
+		 	[_colorR, _colorG, _colorB, 0.03],
 		 	[_colorR, _colorG, _colorB, 0]
 		 ], 
 		 [0.08], 0, 0, "", "", _vehicle];

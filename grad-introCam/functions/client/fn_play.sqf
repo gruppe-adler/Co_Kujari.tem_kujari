@@ -10,16 +10,19 @@ titleText ["","BLACK FADED",999];
         // dont display for JIP
         if (didJIP) exitWith {
             titleText ["", "BLACK IN", 0];
+            10 fadeSound 1;
         };
         diwako_dui_main_toggled_off = true;
         
         player setVariable ["tf_voiceVolume", 0, true];
 
+        /*
         private _viewDistanceCache = viewDistance;
         private _objectViewDistanceCache = getObjectViewDistance;
 
         setViewDistance 8000;
         setObjectViewDistance [4000,200];
+        */
 
         [] spawn GRAD_introCam_fnc_textEffects;
         // [] spawn GRAD_introCam_fnc_playRecord;
@@ -40,8 +43,10 @@ titleText ["","BLACK FADED",999];
 
         STHud_UIMode = 1;
 
+        /*
         setViewDistance _viewDistanceCache;
         setObjectViewDistance _objectViewDistanceCache;
+        */
        
         titleText ["", "BLACK IN", 0];
         player setVariable ["tf_voiceVolume", 1, true];

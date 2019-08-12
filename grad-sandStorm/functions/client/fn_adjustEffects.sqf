@@ -29,6 +29,7 @@ private _apertureOutsideNoGoggles = 20;
 
 private _originalVolume = 1;
 
+// todo doesnt work
 if (_vehicleState > 1) then {
     if (_inVehicle) then {
         // Covered vehicle - attenuate sound, reduce camshake and film grain and particles
@@ -113,7 +114,7 @@ if (_vehicleState == 1 && !_inBuilding) then {
         setAperture _apertureOutsideNoGoggles;
     };
     enableCamShake true;
-    addCamShake [_shakepower, _shakeduration, _shakefreq];
+    addCamShake [_shakepower/3, _shakeduration/2, _shakefreq];
     0.5 fadeMusic _originalVolume;
     
 };

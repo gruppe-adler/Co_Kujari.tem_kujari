@@ -6,8 +6,8 @@
 enableCivs = 1;
 
 backpackProbability = 0.05;                                                     // Wahrscheinlichkeit, dass Zivilisten mit Backpacks spawnen (0-1)
-exitOn = "";                                                                    // Skriptbedingung, ab der keine weiteren Zivilisten mehr spawnen
-onSpawn = "";                                                                   // Code, der ausgeführt wird, wenn ein Zivilist spawnt
+exitOn = "missionNameSpace getVariable ['GRAD_CIV_KILLSWITCH', false]";                                                                    // Skriptbedingung, ab der keine weiteren Zivilisten mehr spawnen
+onSpawn = "[(_this select 0), (_this select 1)] remoteExec ['GRAD_enhancedDesert_fnc_addEmitter',-2,true];";                                                                   // Code, der ausgeführt wird, wenn ein Zivilist spawnt                                                                 // Code, der ausgeführt wird, wenn ein Zivilist spawnt
 onHeldUp = "";                                                                  // Code, der ausgeführt wird, wenn ein Zivilist angehalten wird (Spieler zeigt mit Waffe auf Zivilist)
 
 maxCivsOnFoot = 7;                                                             // Maximale Anzahl an Zivilisten die zu Fuß durch die Gegend latschen

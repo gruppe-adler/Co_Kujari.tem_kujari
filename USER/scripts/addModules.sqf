@@ -54,7 +54,7 @@ if (
     // Get all the passed parameters
     params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
 
-     [_position, 3000, 20, 90] call GRAD_sandStorm_fnc_createSandWall;
+     [_position, 3000, 20, 90] remoteExec ["GRAD_sandStorm_fnc_createSandWall",2];
 
   }] call Ares_fnc_RegisterCustomModule;
 
@@ -63,7 +63,7 @@ if (
     // Get all the passed parameters
     params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
 
-     [_position, 3000, 20, 270] call GRAD_sandStorm_fnc_createSandWall;
+     [_position, 3000, 20, 270] remoteExec ["GRAD_sandStorm_fnc_createSandWall",2];
 
   }] call Ares_fnc_RegisterCustomModule;
 
@@ -72,7 +72,7 @@ if (
     // Get all the passed parameters
     params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
 
-     [_position, 3000, 20, 0] call GRAD_sandStorm_fnc_createSandWall;
+     [_position, 3000, 20, 0] remoteExec ["GRAD_sandStorm_fnc_createSandWall",2];
 
   }] call Ares_fnc_RegisterCustomModule;
 
@@ -81,7 +81,7 @@ if (
     // Get all the passed parameters
     params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
 
-     [_position, 3000, 20, 180] call GRAD_sandStorm_fnc_createSandWall;
+     [_position, 3000, 20, 180] remoteExec ["GRAD_sandStorm_fnc_createSandWall",2];
 
   }] call Ares_fnc_RegisterCustomModule;
    

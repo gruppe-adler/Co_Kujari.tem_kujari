@@ -2,7 +2,7 @@
     adapted from diwako
 */
 
-
+/*
 private _max = 200;
 private _maxIter = 10;
 // private _streets = ["#GdtKlTarmac", "#GdtKlWeatheredTarmac"]; // todo add lythium roads
@@ -51,3 +51,5 @@ private _maxIter = 10;
 
 
 }, 1, [_max, _maxIter]] call CBA_fnc_addPerFrameHandler;
+
+*/
