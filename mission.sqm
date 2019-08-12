@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=409;
+		nextID=435;
 	};
 	class Camera
 	{
-		pos[]={12013.763,52.460617,15193.016};
-		dir[]={0.49625251,-0.39664364,-0.77227926};
-		up[]={0.21442419,0.91797012,-0.33369118};
-		aside[]={-0.84128547,1.9575236e-007,-0.54059583};
+		pos[]={12088.308,24.452707,15088.788};
+		dir[]={0.86000419,-0.50868708,0.04056105};
+		up[]={0.50812548,0.86094886,0.023965394};
+		aside[]={0.047113206,4.206413e-008,-0.99889725};
 	};
 };
 binarizationWanted=0;
@@ -6166,7 +6166,7 @@ class Mission
 			class Attributes
 			{
 				lock="LOCKED";
-				init="call{{this setObjectTexture [_forEachIndex, _x]} forEach [ " \n "    ""a3\air_f_jets\plane_fighter_04\data\Fighter_04_fuselage_01_co.paa"", " \n "    ""a3\air_f_jets\plane_fighter_04\data\Fighter_04_fuselage_02_co.paa"", " \n "    ""a3\air_f_jets\plane_fighter_04\data\fighter_04_misc_01_co.paa"", " \n "    ""a3\air_f_jets\plane_fighter_04\data\Numbers\Fighter_04_number_04_ca.paa"", " \n "    ""a3\air_f_jets\plane_fighter_04\data\Numbers\Fighter_04_number_04_ca.paa"", " \n "    ""a3\air_f_jets\plane_fighter_04\data\Numbers\Fighter_04_number_08_ca.paa"" " \n "];}";
+				init="call{[]execVM ""USER\scripts\retexPlane.sqf"";}";
 				textures="CamoGrey";
 				createAsSimpleObject=1;
 				disableSimulation=1;
@@ -35603,17 +35603,18 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={12096.861,20.842169,15086.826};
+						position[]={12096.861,20.842438,15086.826};
 						angles[]={0,6.1408882,0};
 					};
 					side="Independent";
 					flags=7;
 					class Attributes
 					{
-						init="call{if (local this) then {[this,""REPAIR_VEH_KNEEL""] call BIS_fnc_ambientAnim; };}";
+						init="call{[this,""REPAIR_VEH_KNEEL""] execVM ""USER\scripts\ambientAnim.sqf"";}";
 					};
 					id=2997;
 					type="LOP_UN_Infantry_Pilot";
+					atlOffset=0.00026893616;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -35662,6 +35663,7 @@ class Mission
 			{
 			};
 			id=2998;
+			atlOffset=0.00026893616;
 		};
 		class Item263
 		{
@@ -35675,17 +35677,18 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={12100.626,20.842169,15090.936};
-						angles[]={0,1.6913713,0};
+						position[]={12100.626,20.842438,15090.936};
+						angles[]={0,1.6913636,0};
 					};
 					side="Independent";
 					flags=7;
 					class Attributes
 					{
-						init="call{if (local this) then {[this,""REPAIR_VEH_STAND""] call BIS_fnc_ambientAnim; };}";
+						init="call{[this,""REPAIR_VEH_STAND""] execVM ""USER\scripts\ambientAnim.sqf"";}";
 					};
 					id=2996;
 					type="LOP_UN_Infantry_Engineer";
+					atlOffset=0.00026893616;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -35734,6 +35737,7 @@ class Mission
 			{
 			};
 			id=2999;
+			atlOffset=0.00026893616;
 		};
 		class Item264
 		{
