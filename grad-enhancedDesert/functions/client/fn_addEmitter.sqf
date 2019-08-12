@@ -2,7 +2,7 @@
 	[this] call GRAD_enhancedDesert_fnc_addEmitter;
 */
 
-params [["civilian", objNull], ["_vehicle",objNull]];
+params [["_civilian", objNull], ["_vehicle",objNull]];
 
 if (isNull _vehicle) exitWith {};
 
@@ -42,16 +42,16 @@ private _lifetime = 60;
 		 	[_colorR, _colorG, _colorB, 0],
 		 	[_colorR, _colorG, _colorB, 0.35],
 		 	[_colorR, _colorG, _colorB, 0.33],
-		 	[_colorR, _colorG, _colorB, 0.3],
-		 	[_colorR, _colorG, _colorB, 0.27],
-		 	[_colorR, _colorG, _colorB, 0.24],
+		 	[_colorR, _colorG, _colorB, 0.32],
+		 	[_colorR, _colorG, _colorB, 0.31],
+		 	[_colorR, _colorG, _colorB, 0.30],
+		 	[_colorR, _colorG, _colorB, 0.28],
+		 	[_colorR, _colorG, _colorB, 0.25],
+		 	[_colorR, _colorG, _colorB, 0.23],
 		 	[_colorR, _colorG, _colorB, 0.2],
-		 	[_colorR, _colorG, _colorB, 0.19],
 		 	[_colorR, _colorG, _colorB, 0.17],
-		 	[_colorR, _colorG, _colorB, 0.15],
-		 	[_colorR, _colorG, _colorB, 0.12],
+		 	[_colorR, _colorG, _colorB, 0.14],
 		 	[_colorR, _colorG, _colorB, 0.1],
-		 	[_colorR, _colorG, _colorB, 0.03],
 		 	[_colorR, _colorG, _colorB, 0]
 		 ], 
 		 [0.08], 0, 0, "", "", _vehicle];
