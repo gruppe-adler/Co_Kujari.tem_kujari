@@ -23,4 +23,5 @@ titleText ["","BLACK FADED",999];
 
 if (isServer) then {
     [] spawn GRAD_introCam_fnc_init;
+     0 setFog [0.01,0.003,00];
 };
